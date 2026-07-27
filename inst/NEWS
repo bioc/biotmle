@@ -1,3 +1,14 @@
+biotmle 1.36.1 (BioC 3.23):
+- Removal of the `superheat` dependency, which has been archived on CRAN and was
+  breaking installation on the Bioconductor build system. The heatmap drawn by
+  `heatmap_ic()` is now built directly with `ggplot2`, which the package already
+  imported, so no new dependencies are introduced.
+- As a consequence, `heatmap_ic()` now returns a `ggplot` object rather than
+  drawing to the active graphics device, and arguments passed via `...` are
+  forwarded to `ggplot2::geom_tile()` rather than to `superheat::superheat()`.
+
+---
+
 biotmle 1.18.0 (BioC 3.14):
 - Forthcoming.
 
